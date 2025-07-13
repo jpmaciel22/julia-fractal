@@ -6,7 +6,7 @@ import colorsys
 import tweepy
 import os
 
-turbo = mt.colormaps.get_cmap("turbo")
+turbo = mt.colormaps.get_cmap("Pastel1")
 
 def mandelbrot_escape_time(c, max_iter=100):
     z = 0
@@ -28,7 +28,7 @@ def random_c(min_escape=90, max_iter=100):
 
 # gera a imagem
 
-def gerar_fractal(c, width=2048, height=2048, max_iter=300):
+def gerar_fractal(c, width=2000, height=2000, max_iter=300):
     x_min, x_max = -1.5, 1.5
     y_min, y_max = -1.5, 1.5
 
@@ -85,7 +85,8 @@ def salvar_imagem(img_np, c):
 
 # executar
 if __name__ == "__main__":
-    c = random_c()
+    # c = random_c()
+    c = complex(-0.060013,-0.626)
     print(f"Gerando fractal para c = {c}")
     img = gerar_fractal(c)
     caminho = salvar_imagem(img, c)
